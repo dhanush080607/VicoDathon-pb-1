@@ -33,7 +33,7 @@ export function AnimatedNumber({
   return (
     <span className={className}>
       {display}
-      {suffix}
+      {sufix}
     </span>
   );
 }
