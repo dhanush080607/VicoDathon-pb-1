@@ -744,7 +744,7 @@ Mock data and client-side persistence are used to demonstrate the product experi
 
 <p align="center">
 
-## Dhanush Kumar
+## H Dhanush
 
 **CSE — Data Science**
 
