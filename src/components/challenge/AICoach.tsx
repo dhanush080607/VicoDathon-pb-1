@@ -84,7 +84,6 @@ export function AICoach() {
 
     return `On Day ${day} — "${challenge.days[0]?.title ?? "today's build"}" — I'd split it into three 40-minute blocks: model the data, build the surface, ship the proof. Tell me which block feels hardest and I'll break it down further.`;
   };
-
   const send = (text: string) => {
     const trimmed = text.trim();
     if (!trimmed) return;
@@ -101,32 +100,30 @@ export function AICoach() {
   return (
     <>
       {open && (
-        <div className="fixed inset-0 z-50 flex h-screen h-[100dvh] w-screen flex-col bg-background animate-pop-in overflow-hidden">
-          {/* Top Header */}
-          <div className="flex items-center gap-3 border-b border-border bg-secondary/40 px-6 py-4">
-            <div className="relative grid size-10 shrink-0 place-items-center rounded-full bg-primary/15 text-primary">
-              <Sparkle className="size-5" />
-              <span className="absolute -bottom-0.5 -right-0.5 size-3 rounded-full border-2 border-card bg-success" />
+        <div className="fixed bottom-20 right-3 z-50 flex h-[min(30rem,calc(100dvh-7rem))] w-[min(23rem,calc(100vw-1.5rem))] flex-col surface-panel animate-pop-in overflow-hidden sm:bottom-24 sm:right-5">
+          <div className="flex items-center gap-3 border-b border-border bg-secondary/40 px-4 py-3">
+            <div className="relative grid size-9 shrink-0 place-items-center rounded-full bg-primary/15 text-primary">
+              <Sparkle className="size-4" />
+              <span className="absolute -bottom-0.5 -right-0.5 size-2.5 rounded-full border-2 border-card bg-success" />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate text-base font-semibold">Nova · AI Coding Mentor</p>
+              <p className="truncate text-sm font-semibold">Nova · AI Coding Mentor</p>
               <p className="truncate text-xs text-muted-foreground">
                 online · {stats.streak}d streak · {stats.momentum}/100 momentum
               </p>
             </div>
-            <StreakFlame streak={stats.streak} size="sm" className="shrink-0" />
+            <StreakFlame streak={stats.streak} size="sm" className="hidden shrink-0 sm:grid" />
             <Button variant="ghost" size="icon" aria-label="Close coach" onClick={() => setOpen(false)}>
-              <X className="size-5" />
+              <X className="size-4" />
             </Button>
           </div>
 
-          {/* Messages Area */}
-          <div ref={scrollRef} className="mx-auto flex w-full max-w-3xl flex-1 flex-col space-y-4 overflow-y-auto px-6 py-6">
+          <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
             {messages.map((m) => (
               <div
                 key={m.id}
                 className={cn(
-                  "max-w-[80%] rounded-xl px-4 py-3 text-sm leading-relaxed animate-rise sm:text-base",
+                  "max-w-[85%] rounded-xl px-3 py-2 text-sm leading-relaxed animate-rise",
                   m.role === "user"
                     ? "ml-auto rounded-br-sm bg-primary text-primary-foreground"
                     : "rounded-bl-sm bg-secondary text-secondary-foreground",
@@ -136,11 +133,11 @@ export function AICoach() {
               </div>
             ))}
             {thinking && (
-              <div className="flex w-fit items-center gap-2 rounded-xl rounded-bl-sm bg-secondary px-4 py-3">
+              <div className="flex w-fit items-center gap-1.5 rounded-xl rounded-bl-sm bg-secondary px-3 py-2.5">
                 {[0, 1, 2].map((i) => (
                   <span
                     key={i}
-                    className="size-2 rounded-full bg-muted-foreground animate-float"
+                    className="size-1.5 rounded-full bg-muted-foreground animate-float"
                     style={{ animationDelay: `${i * 140}ms`, animationDuration: "1s" }}
                   />
                 ))}
@@ -148,45 +145,40 @@ export function AICoach() {
             )}
           </div>
 
-          {/* Bottom Controls & Input */}
-          <div className="border-t border-border bg-background p-4 sm:p-6">
-            <div className="mx-auto max-w-3xl">
-              <div className="mb-3 flex flex-wrap gap-2">
-                {["How's my streak?", "What's next?", "Momentum?", "Badges"].map((q) => (
-                  <button
-                    key={q}
-                    onClick={() => send(q)}
-                    className="rounded-full border border-border px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary sm:text-sm"
-                  >
-                    {q}
-                  </button>
-                ))}
-              </div>
-              <form
-                className="flex gap-3"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  send(input);
-                }}
-              >
-                <Input
-                  ref={inputRef}
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask your coach…"
-                  aria-label="Message the AI coach"
-                  className="h-11 sm:h-12"
-                />
-                <Button type="submit" size="icon" aria-label="Send message" disabled={!input.trim()} className="size-11 shrink-0 sm:size-12">
-                  <Send className="size-5" />
-                </Button>
-              </form>
+          <div className="border-t border-border p-3">
+            <div className="mb-2 flex flex-wrap gap-2">
+              {["How's my streak?", "What's next?", "Momentum?", "Badges"].map((q) => (
+                <button
+                  key={q}
+                  onClick={() => send(q)}
+                  className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                >
+                  {q}
+                </button>
+              ))}
             </div>
+            <form
+              className="flex gap-2"
+              onSubmit={(e) => {
+                e.preventDefault();
+                send(input);
+              }}
+            >
+              <Input
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Ask your coach…"
+                aria-label="Message the AI coach"
+              />
+              <Button type="submit" size="icon" aria-label="Send message" disabled={!input.trim()}>
+                <Send className="size-4" />
+              </Button>
+            </form>
           </div>
         </div>
       )}
 
-      {/* Floating Toggle Button */}
       <button
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Close AI coach" : "Open AI coach"}
