@@ -179,13 +179,13 @@ export function AICoach() {
         </div>
       )}
 
-      <button1
+      <button
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Close AI coach" : "Open AI coach"}
         className="fixed bottom-4 right-4 z-50 grid size-13 place-items-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105 active:scale-95 animate-pulse-ring sm:bottom-5 sm:right-5 sm:size-14"
       >
         {open ? <X className="size-6" /> : <MessageSquareCode className="size-6" />}
-      </button1>
+      </button>
     </>
   );
 }
