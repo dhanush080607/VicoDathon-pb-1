@@ -1,404 +1,622 @@
-# Momentum Builder
+# ABTalks — 60-Day Coding Challenge
 
-================================================
+> **60 Days. One Commit. One Future.**
 
-FUNCTIONAL REQUIREMENTS:
+A mobile-first redesign of the ABTalks 60-Day Coding Challenge, built as a hackathon project to help college students build coding consistency, create public proof of work, and showcase their progress.
 
-This must be a fully working interactive application, not a static prototype.
+---
 
-Every feature shown in the UI must work.
+## 🚀 Live Demo
 
-================================================
+**Live App:**
+https://build60.lovable.app
 
-APPLICATION STATE:
+**GitHub:**
+https://github.com/dhanush080607/VicoDathon-pb-1
 
-Use React state management.
+**LinkedIn:**
+https://www.linkedin.com/in/h-dhanush-189565327/
 
-Use localStorage for persistence.
+---
 
-The user should not lose progress after refreshing.
+## 🎯 About the Project
 
-================================================
+ABTalks runs a 60-day coding challenge for college students.
 
-ROUTING:
+Students choose a coding track, build something every day, and submit proof of their work through:
 
-Implement working routes:
+* GitHub repository / commit
+* LinkedIn post
 
+The goal is to turn daily coding into a visible learning journey.
+
+This redesign focuses on making that journey:
+
+* Motivating
+* Simple
+* Mobile-first
+* Progress-driven
+* Career-oriented
+* Engaging
+
+---
+
+## 💡 The Problem
+
+Students often struggle with consistency.
+
+They may:
+
+* Start learning but stop after a few days
+* Build projects without documenting them
+* Have difficulty maintaining coding streaks
+* Lack public proof of their skills
+* Struggle to see their overall progress
+
+ABTalks addresses this by combining **daily challenges, progress tracking, achievements, streaks, and proof of work** into one experience.
+
+---
+
+## 🧠 Product Concept
+
+The core journey is:
+
+```text
+Choose a Track
+      ↓
+Build Today's Project
+      ↓
+Complete the Task
+      ↓
+Commit to GitHub
+      ↓
+Share on LinkedIn
+      ↓
+Reflect on What You Learned
+      ↓
+Maintain Your Streak
+      ↓
+Complete 60 Days
+```
+
+---
+
+# 📱 Mobile-First Design
+
+The primary design target is **390px mobile width**.
+
+The product is designed around the real usage scenario of a college student using the platform on their phone after college.
+
+### Design priorities
+
+* Mobile-first layout
+* Touch-friendly controls
+* Clear information hierarchy
+* Short, scannable content
+* Strong visual feedback
+* Dark-first interface
+* Responsive components
+* Smooth interactions
+
+Desktop layouts are treated as a secondary experience.
+
+---
+
+# 🎨 Design System
+
+The visual style combines a modern developer-product aesthetic with motivational gamification.
+
+### Visual direction
+
+* Deep dark backgrounds
+* Electric blue accents
+* Purple highlights
+* Glass-style surfaces
+* Rounded cards
+* Strong typography
+* Subtle gradients
+* Motion-based feedback
+
+The design direction is inspired by modern products such as Linear, GitHub, Apple, and Duolingo.
+
+---
+
+# 🗺️ Required Routes
+
+The application implements the three routes required by the hackathon.
+
+```text
 /
-
-Landing page
-
 /dashboard
-
-Student dashboard
-
 /day/12
+```
 
-Challenge day page
+### `/`
 
-Navigation between pages must work correctly.
+Landing page introducing ABTalks and the 60-day challenge.
 
-================================================
+### `/dashboard`
 
-LANDING PAGE FUNCTIONALITY:
+Student progress dashboard containing the current challenge state and daily mission.
 
-Start My Challenge button:
+### `/day/12`
 
-When clicked:
+Detailed Day 12 challenge experience with task information and proof-of-work submission.
 
-Navigate to /dashboard
+---
 
-Explore Tracks button:
+# ✨ Key Features
 
-Scroll smoothly to challenge tracks section.
+## 🏠 Landing Page
 
-Track cards:
+The landing page is designed for a student who has never heard of ABTalks.
 
-Should have hover and click interactions.
+It communicates:
 
-When clicked:
+* What the challenge is
+* Why students should participate
+* How the challenge works
+* Available coding tracks
+* Benefits of consistent building
+* Social proof
+* AI Coding Coach concept
 
-Show selected track state.
+### Hero Message
 
-AI Coding Coach:
+> **60 Days. One Commit. One Future.**
 
-Create an interactive floating assistant.
+---
 
-When clicked:
+# 📊 Student Dashboard
 
-Open a chat-style popup.
+The dashboard acts as the student's daily home screen.
 
-Show sample AI responses:
+### Includes
 
-"Your streak is strong. Complete today's commit to stay ahead."
+* Student profile
+* Current coding streak
+* Challenge progress
+* Today's mission
+* Achievement badges
+* Rank information
+* Momentum score
+* 60-day progress tracker
+* AI Coding Coach
 
-"Your next goal should be deploying your project."
+The dashboard is designed to answer three questions immediately:
 
-================================================
+```text
+Where am I?
+What should I do today?
+How close am I to my goal?
+```
 
-DASHBOARD FUNCTIONALITY:
+---
 
-Profile data:
+# 🔥 Streak & Progress
 
-Load from mock JSON.
+Daily consistency is represented through a visual progress system.
 
-Streak system:
+Students can see:
 
-Create dynamic streak calculation.
+* Current streak
+* Completed days
+* Current challenge day
+* Remaining days
+* Overall completion
 
-States:
+The 60-day journey is represented visually so students can understand their progress at a glance.
 
-New user:
+---
 
-streak = 0
+# ⚡ Momentum Score
 
-Show:
+The dashboard includes a **Momentum Score** concept that summarizes the student's current progress and consistency.
 
-"Your first commit starts your journey."
+Example:
 
-Active user:
+```text
+87 / 100
 
-Show current streak.
+You're ahead of 74% of participants.
+```
 
-Missed day:
+The score is presented as a motivational product feature within the prototype.
 
-Show recovery message.
+---
 
-================================================
+# 🏆 Achievements
 
-TODAY TASK:
+Students can unlock achievement badges as they progress.
 
-Start Building button:
+Examples include:
 
-Navigate to:
+```text
+🏆 First Commit
+🔥 7 Day Warrior
+🚀 Project Builder
+```
 
+Achievement cards communicate:
+
+* Locked state
+* Unlocked state
+* Progress
+* Completion
+
+---
+
+# 💻 Challenge Day
+
+### Route
+
+```text
 /day/12
+```
 
-Submit Proof button:
+The Challenge Day screen provides everything a student needs to complete a daily challenge.
 
-Navigate to challenge submission section.
+### Example Challenge
 
-================================================
+**AI Resume Analyzer**
 
-PROGRESS TRACKER:
+### Learning Goals
 
-Create interactive 60 day tracker.
+* File upload handling
+* AI API integration
+* Resume scoring
+* Application deployment
 
-Completed days:
+---
 
-User can click completed days.
+# ✅ Interactive Build Checklist
 
-Current day:
+Students can track the individual parts of their daily task.
 
-Animated.
+Example:
 
-Future days:
+```text
+☑ Setup project
+☑ Build interface
+☐ Connect AI API
+☐ Deploy project
+```
 
-Locked.
+This helps break a large project into smaller actions.
 
-When a day is completed:
+---
 
-Update:
+# 🔗 Proof of Work
 
-- Completion percentage
+Students can provide proof of their work through:
 
-- Momentum score
+### GitHub
 
-- Badge progress
+* Repository URL
+* Commit URL
 
-Save changes in localStorage.
+### LinkedIn
 
-================================================
+* LinkedIn post URL
 
-MOMENTUM SCORE:
+The interface provides submission and validation states so students can understand whether their proof has been entered correctly.
 
-Make it dynamic.
+---
 
-Calculate based on:
+# 📝 Reflection Journal
 
-GitHub submission completed:
+After working on a challenge, students can reflect on their learning.
 
-+40 points
+The interface asks:
 
-LinkedIn submission completed:
+> **What did you learn today?**
 
-+30 points
+and:
 
-Daily checklist completed:
+> **What challenge did you overcome?**
 
-+20 points
+The prototype uses client-side state/local persistence for the experience.
 
-Reflection completed:
+---
 
-+10 points
+# 🤖 AI Coding Coach
 
-Maximum:
+A dedicated AI Coach interface provides motivational and progress-oriented guidance.
 
-100 points
+The feature is designed around the idea of having a lightweight coding mentor available throughout the 60-day journey.
 
-Animate score changes.
+The coach experience focuses on:
 
-================================================
+* Progress
+* Momentum
+* Daily motivation
+* Next actions
+* Challenge completion
 
-ACHIEVEMENT SYSTEM:
+---
 
-Create working badges.
+# 🧩 Edge Cases
 
-Examples:
+The interface includes states for different student situations.
 
-First Commit:
+### First Day
 
-Unlocked after first submission.
+```text
+Welcome Explorer 🚀
 
-7 Day Warrior:
+Your first commit starts your journey.
+```
 
-Unlocked after 7 completed days.
+### Missed Day
 
-Project Builder:
+```text
+You missed yesterday.
 
-Unlocked after completing a project.
+Complete today's task to recover momentum.
+```
 
-Locked badges should show progress.
+### Empty Profile
 
-================================================
+```text
+Choose your first challenge track.
+```
 
-CHALLENGE DAY PAGE:
+These states ensure the interface remains useful even when a student has little or no previous activity.
 
-Task checklist:
+---
 
-Each checkbox must work.
+# 🛠️ Tech Stack
 
-When checked:
+| Technology    | Usage                   |
+| ------------- | ----------------------- |
+| React         | Frontend                |
+| TypeScript    | Type safety             |
+| Tailwind CSS  | Styling                 |
+| shadcn/ui     | UI components           |
+| Framer Motion | Animations              |
+| Lucide React  | Icons                   |
+| Vite          | Build tooling           |
+| Local Storage | Client-side persistence |
+| Mock Data     | Prototype data          |
 
-- Update progress
+---
 
-- Animate completion
+# 🏗️ Project Structure
 
-- Save state
+```text
+VicoDathon-pb-1/
+│
+├── .lovable/
+├── public/
+├── src/
+│
+├── .gitignore
+├── .prettierignore
+├── .prettierrc
+├── AGENTS.md
+├── bun.lock
+├── bunfig.toml
+├── components.json
+├── eslint.config.js
+├── package.json
+├── README.md
+├── tsconfig.json
+└── vite.config.ts
+```
 
-================================================
+---
 
-GITHUB SUBMISSION:
+# ⚙️ Getting Started
 
-Create form:
+## 1. Clone the repository
 
-Repository URL
+```bash
+git clone https://github.com/dhanush080607/VicoDathon-pb-1.git
+```
 
-Commit URL
+## 2. Navigate into the project
 
-Validation:
+```bash
+cd VicoDathon-pb-1
+```
 
-Empty:
+## 3. Install dependencies
 
-Show error message.
+Using npm:
 
-Invalid URL:
+```bash
+npm install
+```
 
-Show validation error.
+Or using Bun:
 
-Valid:
+```bash
+bun install
+```
 
-Show:
+## 4. Start the development server
 
-"GitHub proof verified ✓"
-
-================================================
-
-LINKEDIN SUBMISSION:
-
-Create form:
-
-LinkedIn Post URL
-
-Validation:
-
-Empty:
-
-Show error.
-
-Valid:
-
-Show:
-
-"LinkedIn proof verified ✓"
-
-================================================
-
-DAY COMPLETION:
-
-Create:
-
-"Complete Day 12"
-
-button.
-
-Only enable when:
-
-✓ Checklist completed
-
-✓ GitHub proof added
-
-✓ LinkedIn proof added
-
-✓ Reflection completed
-
-When completed:
-
-Show celebration animation.
-
-Update:
-
-Day progress
-
-Streak
-
-Momentum score
-
-Achievements
-
-================================================
-
-REFLECTION JOURNAL:
-
-Create working text inputs:
-
-"What did you learn today?"
-
-"What challenge did you overcome?"
-
-Save responses locally.
-
-Show previous reflections as timeline cards.
-
-================================================
-
-MOCK DATA:
-
-Create realistic JSON:
-
-student.json
-
-challenge.json
-
-achievements.json
-
-Use this data throughout the application.
-
-================================================
-
-ERROR HANDLING:
-
-Handle:
-
-Empty profile
-
-No streak
-
-Missed day
-
-Incomplete submission
-
-Invalid URLs
-
-Loading states
-
-================================================
-
-QUALITY REQUIREMENTS:
-
-The final application should behave like a real SaaS product.
-
-No dead buttons.
-
-No fake interactions.
-
-No placeholder actions.
-
-All UI elements must have functionality.
-
-Before finishing:
-
-Test every route:
-
-/
-
-dashboard
-
-/day/12
-
-Test:
-
-Buttons
-
-Forms
-
-Navigation
-
-State updates
-
-Local storage
-
-Deliver a complete working hackathon-ready application.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://build60.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/722bd680-9884-47f1-b232-61a25a477314).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
 npm run dev
 ```
+
+Or:
+
+```bash
+bun run dev
+```
+
+## 5. Open the application
+
+Use the local URL displayed in the terminal, usually:
+
+```text
+http://localhost:5173
+```
+
+---
+
+# 🧪 Testing
+
+The hackathon evaluates the application at **390px width**.
+
+Before submission, verify all three routes:
+
+```text
+/
+ /dashboard
+ /day/12
+```
+
+Also check:
+
+* Navigation
+* Buttons
+* Forms
+* Checklist interactions
+* Progress states
+* Achievement states
+* Proof submission
+* Reflection input
+* Mobile responsiveness
+* No horizontal scrolling
+
+---
+
+# 📦 Build
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview it locally:
+
+```bash
+npm run preview
+```
+
+---
+
+# 🌐 Deployment
+
+The project is deployed as a web application.
+
+### Live URL
+
+https://build60.lovable.app
+
+### Source Code
+
+https://github.com/dhanush080607/VicoDathon-pb-1
+
+---
+
+# 🔐 Scope
+
+This hackathon prototype intentionally does not include:
+
+* Authentication
+* Production user accounts
+* Production database
+* Recruiter dashboard
+* Admin panel
+
+Mock data and client-side persistence are sufficient for demonstrating the required product experience.
+
+---
+
+# 📈 Future Improvements
+
+If developed beyond the hackathon, the platform could be extended with:
+
+### GitHub Integration
+
+Automatically verify repositories and commits.
+
+### LinkedIn Integration
+
+Support easier proof sharing and verification.
+
+### Authentication
+
+Allow students to create persistent accounts.
+
+### Real Database
+
+Store challenge progress, achievements, submissions, and reflections.
+
+### Leaderboards
+
+Create real-time student rankings.
+
+### AI Personalization
+
+Use student progress to recommend tasks and projects.
+
+### Portfolio Generation
+
+Automatically turn completed challenge work into a developer portfolio.
+
+### Recruiter Visibility
+
+Allow verified student profiles to become discoverable by recruiters.
+
+---
+
+# 🏆 Hackathon Submission
+
+## Project
+
+**ABTalks — 60-Day Coding Challenge**
+
+## Repository
+
+https://github.com/dhanush080607/VicoDathon-pb-1
+
+## Live Deployment
+
+https://build60.lovable.app
+
+## LinkedIn
+
+https://www.linkedin.com/in/h-dhanush-189565327/
+
+## Route Map
+
+```text
+/
+/dashboard
+/day/12
+```
+
+---
+
+# 👨‍💻 Developer
+
+**Dhanush Kumar**
+
+CSE — Data Science
+
+Frontend Developer | UI Designer | AI & ML Enthusiast
+
+LinkedIn:
+https://www.linkedin.com/in/h-dhanush-189565327/
+
+GitHub:
+https://github.com/dhanush080607
+
+---
+
+# 💙 Final Thought
+
+ABTalks is built around one simple idea:
+
+> **Don't just learn. Build. Commit. Share. Repeat.**
+
+Because after 60 days, the goal isn't just to have completed a challenge.
+
+The goal is to have **60 days of proof that you showed up.**
+
+### **60 Days. One Commit. One Future.**
