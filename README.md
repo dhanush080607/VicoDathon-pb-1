@@ -32,7 +32,7 @@
 | 🚀 Live Application  | [vico-dathon-pb-1.vercel.app](https://vico-dathon-pb-1.vercel.app/)            |
 | 💻 GitHub Repository | [VicoDathon-pb-1](https://github.com/dhanush080607/VicoDathon-pb-1)            |
 | 📜 Commit History    | [View Commits](https://github.com/dhanush080607/VicoDathon-pb-1/commits/main/) |
-| 👤 LinkedIn          | [Dhanush Kumar](https://www.linkedin.com/in/h-dhanush-189565327/)              |
+| 👤 LinkedIn          | [H Dhanush](https://www.linkedin.com/in/h-dhanush-189565327/)              |
 
 ---
 
